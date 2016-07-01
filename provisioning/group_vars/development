@@ -1,0 +1,22 @@
+---
+common_bash_it_theme: bobby
+
+firewall_allowed_tcp_ports:
+  - 22
+  - 80
+  - 8080
+
+nginx_vhosts:
+  - listen: 80
+    server_name: learn-redux.l
+    root: /var/www/learn-redux
+    index: index.html
+    extra_parameters: |
+      location / {
+        try_files $uri /index.html;
+      }
+
+ntp_timezone: America/Toronto
+ntp_enabled: false
+
+remote_user: vagrant

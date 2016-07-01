@@ -1,0 +1,8 @@
+- hosts: development
+  roles:
+    - { role: common, tags: [common] }
+    - { role: geerlingguy.ntp, sudo: yes, tags: [ntp] }
+    - { role: geerlingguy.firewall, sudo: yes, tags: [firewall] }
+    - { role: geerlingguy.nginx, sudo: yes, tags: [nginx] }
+    - { role: geerlingguy.nodejs, sudo: yes, tags: [node] }
+    - { role: learn-redux, tags: [learn-redux] }
