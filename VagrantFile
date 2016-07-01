@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.inventory_path = "provisioning/inventory"
     ansible.limit = "vagrant.dev.learn-redux.com"
     ansible.verbose = 'v'
-    #ansible.tags = ["learn-redux"]
+    ansible.tags = ["nginx", "learn-redux"]
   end
 
 end

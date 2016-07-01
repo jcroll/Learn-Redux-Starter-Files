@@ -1,3 +1,6 @@
 ---
+- lineinfile: dest=/etc/hosts regexp=^127\.0\.0\.1 line="127.0.0.1 localhost learn-redux.l"
+  become: true
+
 - npm: path=/var/www/learn-redux/
   become: true

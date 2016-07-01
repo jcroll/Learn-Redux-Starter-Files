@@ -6,6 +6,8 @@ firewall_allowed_tcp_ports:
   - 80
   - 8080
 
+nginx_worker_connections: 1024
+nginx_remove_default_vhost: true
 nginx_vhosts:
   - listen: 80
     server_name: learn-redux.l
