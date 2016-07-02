@@ -8,7 +8,8 @@ export default class Main extends React.Component {
         <h1>
           <Link to="/">Reduxstagram</Link>
         </h1>
-        {React.cloneElement(this.props.children, this.props)}
+        {/* https://github.com/wesbos/Learn-Redux-Starter-Files/issues/6#issuecomment-222210005 */}
+        {React.cloneElement(this.props.children, { ...this.props, key: undefined, ref: undefined })}
       </div>
     )
   }
