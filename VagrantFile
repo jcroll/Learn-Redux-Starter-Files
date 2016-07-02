@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     cpus = `sysctl -n hw.ncpu`.to_i
     mem  = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 4
 
-    v.customize ['modifyvm', :id, '--cpuexecutioncap', '75'] # Do not exceed 75% of CPU usage on host
+    v.customize ['modifyvm', :id, '--cpuexecutioncap', '75']
     v.customize ['modifyvm', :id, '--cpus', cpus]
     v.customize ['modifyvm', :id, '--memory', mem]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.inventory_path = "provisioning/inventory"
     ansible.limit = "vagrant.dev.learn-redux.com"
     ansible.verbose = 'v'
-    ansible.tags = ["nginx", "learn-redux"]
+    #ansible.tags = ["learn-redux"]
   end
 
 end
